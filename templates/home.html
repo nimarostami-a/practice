@@ -7,17 +7,17 @@
             body{
                 text-align : center;
                 font-family:Arial,sans-serif;
-                margin:0 auto;
             }
             img {
-                width:100%;
+                width:80%;
                 max-width: 600px;
                 height: auto;
                 display:block;
-                margin:20px auto;
+                margin-bottom: 100px;
+                margin-left: auto;
+                margin-right: auto;
                 border-radius: 10px;
                 box-shadow: 5px 5px 15px rgba(0,0,0,0.2);;
-                object-fit: cover;
                 }
             h1
             {
@@ -26,7 +26,32 @@
                 font-weight: bold;
                 color:rgb(255,180,0)
             }
- 
+            #items{
+
+                margin-bottom: 15px;
+    
+            }
+            .work_button{
+                display:block;
+                width:70%;
+                margin:15px auto;
+                padding:15px;
+                border:2px solid rgb(0,0,0);
+                margin-bottom:15px;
+                padding: 10px 20px;
+                background-color: rgb(220, 136, 0);
+                color:black;
+                border: radius 2px;
+                border: none;
+                cursor: pointer;
+                font-size:20px;
+                transition:background-color 0.3s ease;
+            }
+            .work_button:hover{
+                background-color: green;
+                border-color:rgb(27, 26, 26);
+            }
+  
         </style>
 
     </head>
@@ -34,9 +59,13 @@
         <h1>برنامه ریزی لمیز</h1>
         <img src="{{ url_for('static', filename='banner.JPG') }}" id="banner">
         <h2>
-            <p>سایت برنامه ریزی لمیز ، الان بخصوص برای وارد کردن جابه جایی اقلام</p>
+            <p style=margin-bottom:80px;>سایت برنامه ریزی لمیز ، الان بخصوص برای وارد کردن جابه جایی اقلام </p>
         </h2>
-        <button>تماس با ما</button>
+        {% for work in works %}
+        <button class="work_button"><b>{{work}}</b></button>
+
+        {% endfor %}
+        <button style="margin-top: 50px;">تماس با ما</button>
 
 
     </body>
