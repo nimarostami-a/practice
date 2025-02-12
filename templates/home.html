@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 
 <html lang="en">
     <head>
@@ -70,3 +71,102 @@
 
     </body>
 </html>
+=======
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>lamiz planning</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      img {
+        width: 80%;
+        max-width: 600px;
+        height: auto;
+        display: block;
+        margin-bottom: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+      }
+      h1 {
+        text-align: center;
+        font-size: 55px;
+        font-weight: bold;
+        color: rgb(255,180,0);
+      }
+      #items {
+        margin-bottom: 15px;
+      }
+      .work_button {
+        display: block;
+        width: 70%;
+        margin: 15px auto;
+        padding: 10px 20px;
+        border: none;
+        background-color: rgb(220, 136, 0);
+        color: black;
+        cursor: pointer;
+        font-size: 20px;
+        transition: background-color 0.3s ease;
+      }
+      .work_button:hover {
+        background-color: green;
+        border-color: rgb(27, 26, 26);
+      }
+      /* Navigation bar styles */
+      .navbar {
+        background-color: #8B4513;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+      }
+      .navbar a {
+        float: right;
+        display: block;
+        color: #fff;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+      .navbar a:hover {
+        background-color: #A0522D;
+      }
+      @media screen and (max-width: 600px) {
+        .navbar a {
+          float: none;
+          width: 100%;
+          text-align: right;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+      {% for work in works %}
+        <a href="#{{ work|replace(' ', '_') }}">{{ work }}</a>
+      {% endfor %}
+    </div>
+
+    <h1>برنامه ریزی لمیز</h1>
+    <img src="{{ url_for('static', filename='banner.JPG') }}" id="banner">
+    <h2>
+      <p style="margin-bottom:80px;">سایت برنامه ریزی لمیز ، الان بخصوص برای وارد کردن جابه جایی اقلام</p>
+    </h2>
+
+    <!-- Sections for each work -->
+    {% for work in works %}
+      <section id="{{ work|replace(' ', '_') }}">
+        <button class="work_button"><b>{{ work }}</b></button>
+      </section>
+    {% endfor %}
+
+    <button style="margin-top: 50px;">تماس با ما</button>
+  </body>
+</html>
+>>>>>>> 404cb15 (Initial commit on new system)
